@@ -13,11 +13,14 @@ func main() {
 		"green": "#00FF00",
 	}
 
-	fmt.Println(colors)
-
 	// delete key from map
+	// delete(colors, "red")
+	printMap(colors)
 
-	delete(colors, "red")
-	fmt.Println(colors)
+}
 
+func printMap(c map[string]string) {
+	for color, hexCode := range c {
+		fmt.Println("Hex code for color ", color, " is ", hexCode)
+	}
 }
