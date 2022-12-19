@@ -17,6 +17,16 @@ func main() {
 	printGreetings(eb)
 	printGreetings(sp)
 
+	/*
+		// Asignment 1
+		// sagar := person{firstName: "Sagar", lastName: "Hande"}
+		s := squere{side: 10}
+		t := triangle{base: 7, height: 9}
+
+		printArea(s)
+		printArea(t)
+	*/
+
 }
 
 func printGreetings(b bot) {
