@@ -20,12 +20,14 @@ func main() {
 
 	}
 
-	// for i := 0; i < len(links); i++ {
-	// 	fmt.Println(<-c)
+	// for {
+	// 	go checkLink(<-c, c)
 	// }
 
-	for {
-		go checkLink(<-c, c)
+	// alternative loop syntax for above
+
+	for l := range c {
+		go checkLink(l, c)
 	}
 }
 
