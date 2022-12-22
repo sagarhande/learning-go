@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 func main() {
@@ -26,8 +27,18 @@ func main() {
 
 	// alternative loop syntax for above
 
+	// for l := range c {
+	// 	go checkLink(l, c)
+	// }
+
+	// Final for loop with sleep
+
 	for l := range c {
-		go checkLink(l, c)
+		// This is function literal / lamda func in go/ Anonymous function in go
+		go func(link string) {
+			time.Sleep(time.Second * 4) // time.Second is 1 sec
+			checkLink(link, c)
+		}(l)
 	}
 }
 
